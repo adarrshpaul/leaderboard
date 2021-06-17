@@ -16,6 +16,7 @@
 
 // };
 const rankingsBody = document.querySelector("#rankings > tbody");
+console.log(rankingsBody);
 
 /**
  * Check login-status
@@ -114,6 +115,7 @@ async function populateRankings () {
            // Populate Leaderboard
     let data = await getData('https://e1qgd37uc2.execute-api.us-east-1.amazonaws.com/getScore');
     let json = data.result.Items;
+    console.log(json)
     json.forEach((row) => {
         const tr = document.createElement("tr");
         console.log(row);
