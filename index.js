@@ -122,9 +122,9 @@ async function populateRankings() {
         let i = 1;
         let changedSortObj = {
             'rank': i,
-            'score': row['score'],
             'profilePic' : row['profilePic'],
-            'name': row['firstname']    
+            'name': row['firstname'],
+            'score': row['score']
             };
                  
         for(prop in changedSortObj){
