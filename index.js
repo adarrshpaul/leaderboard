@@ -121,6 +121,9 @@ async function populateRankings() {
         console.log('row :',row);
         
         for(prop in row){
+            if(prop === 'lastname'){
+            /**Skip**/
+            }else {
             const td = document.createElement("td");
             if(prop === 'profilePic'){
             let src = row[prop];
@@ -132,6 +135,8 @@ async function populateRankings() {
             td.textContent = row[prop];
             tr.appendChild(td);
             }
+            }
+ 
 
         }
 
