@@ -3,18 +3,18 @@
 // });
 
 
-window.fbAsyncInit = function () {
-    window.FB.init({
-        appId: '513213246765464',
-        cookie: true,                     // Enable cookies to allow the server to access the session.
-        xfbml: true,                     // Parse social plugins on this webpage.
-        version: 'v11.0'           // Use this Graph API version for this call.
-    });
-       window.FB.getLoginStatus(function (response) {
-       renderUI();
-    });
+// window.fbAsyncInit = function () {
+//     window.FB.init({
+//         appId: '513213246765464',
+//         cookie: true,                     // Enable cookies to allow the server to access the session.
+//         xfbml: true,                     // Parse social plugins on this webpage.
+//         version: 'v11.0'           // Use this Graph API version for this call.
+//     });
+//        window.FB.getLoginStatus(function (response) {
+//        renderUI();
+//     });
 
-};
+// };
 
 /**
  * Check login-status
