@@ -15,6 +15,7 @@
 //     });
 
 // };
+const rankingsBody = document.querySelector("#rankings > tbody");
 
 /**
  * Check login-status
@@ -115,7 +116,8 @@ async function populateRankings () {
     let json = data.result.Items;
     json.forEach((row) => {
         const tr = document.createElement("tr");
-
+        console.log(row);
+        
         row.forEach((cell) => {
             const td = document.createElement("td");
             td.textContent = cell.id;
