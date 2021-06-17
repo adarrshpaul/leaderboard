@@ -10,7 +10,10 @@ window.fbAsyncInit = function () {
         xfbml: true,                     // Parse social plugins on this webpage.
         version: 'v11.0'           // Use this Graph API version for this call.
     });
-renderUI();
+       window.FB.getLoginStatus(function (response) {
+       renderUI();
+    });
+
 };
 
 /**
