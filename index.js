@@ -120,9 +120,9 @@ async function populateRankings() {
         const tr = document.createElement("tr");
         console.log('row :',row);
         
-        for(prop of row){
+        for(prop in row){
             const td = document.createElement("td");
-            td.textContent = prop;
+            td.textContent = row[prop];
             tr.appendChild(td);
         }
 
