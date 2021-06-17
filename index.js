@@ -118,7 +118,7 @@ async function populateRankings () {
 
         row.forEach((cell) => {
             const td = document.createElement("td");
-            td.textContent = cell;
+            td.textContent = cell.id;
             tr.appendChild(td);
         });
 
