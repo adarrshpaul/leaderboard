@@ -121,7 +121,7 @@ async function populateRankings() {
         console.log('row :',row);
         
         for(prop in row){
-            if(prop === 'lastname'){
+            if(prop === 'lastname' || prop === 'id'){
             /**Skip**/
             }else {
             const td = document.createElement("td");
