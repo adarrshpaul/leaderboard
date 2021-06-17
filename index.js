@@ -119,20 +119,29 @@ async function populateRankings() {
     json.forEach((row) => {
         const tr = document.createElement("tr");
         console.log('row :',row);
-        
-        for(prop in row){
+        let i = 1;
+        let changedSortObj = {
+            'rank': i;
+            'score': row['score'],
+            'profilePic' : row['profilePic'],
+            'name': row['firstname']    
+            };
+                 
+        for(prop in changedSortObj){
+            
             if(prop === 'lastname' || prop === 'id'){
             /**Skip**/
             }else {
+
             const td = document.createElement("td");
             if(prop === 'profilePic'){
-            let src = row[prop];
+            let src = changedSortObj[prop];
             let imageElem = document.createElement("img");
             imageElem.src = src;    
             tr.appendChild(imageElem);
             }
                 else {
-            td.textContent = row[prop];
+            td.textContent = changedSortObj[prop];
             tr.appendChild(td);
             }
             }
