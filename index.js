@@ -10,9 +10,7 @@ window.fbAsyncInit = function () {
         xfbml: true,                     // Parse social plugins on this webpage.
         version: 'v11.0'           // Use this Graph API version for this call.
     });
-    window.FB.getLoginStatus(function (response) {   // Called after the JS SDK has been initialized.
-        statusChangeCallback(response);        // Returns the login status.
-    });
+renderUI();
 };
 
 /**
@@ -107,5 +105,5 @@ async function renderLeaderBoard() {
     }
 }
 
-renderUI();
+
 
