@@ -121,7 +121,7 @@ async function populateRankings() {
         console.log('row :',row);
         let i = 1;
         let changedSortObj = {
-            'rank': i;
+            'rank': i,
             'score': row['score'],
             'profilePic' : row['profilePic'],
             'name': row['firstname']    
@@ -148,7 +148,7 @@ async function populateRankings() {
  
 
         }
-
+        i++;
         rankingsBody.appendChild(tr);
     }); 
     } catch (error) {
