@@ -60,7 +60,7 @@ function statusChangeCallback(response) {  // Called with the results from FB.ge
 
 /**Renders UI based on login-status */
 async function renderUI() {
-    console.log(333)
+    console.log(333);
    await populateRankings();
 }
 
@@ -110,15 +110,15 @@ async function getData(url = '') {
 //     }
 // }
 
-async function populateRankings () {
+async function populateRankings() {
     try {
            // Populate Leaderboard
     let data = await getData('https://e1qgd37uc2.execute-api.us-east-1.amazonaws.com/getScore');
     let json = data.result.Items;
-    console.log(json)
+    console.log('JSON :',json)
     json.forEach((row) => {
         const tr = document.createElement("tr");
-        console.log(row);
+        console.log('row :',row);
         
         row.forEach((cell) => {
             const td = document.createElement("td");
@@ -133,6 +133,7 @@ async function populateRankings () {
     }
 }
 
+renderUI();
 
 
 
