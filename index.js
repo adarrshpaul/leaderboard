@@ -120,11 +120,11 @@ async function populateRankings() {
         const tr = document.createElement("tr");
         console.log('row :',row);
         
-        row.forEach((cell) => {
+        for(prop of row){
             const td = document.createElement("td");
-            td.textContent = cell.id;
+            td.textContent = prop;
             tr.appendChild(td);
-        });
+        }
 
         rankingsBody.appendChild(tr);
     }); 
