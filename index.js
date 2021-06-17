@@ -43,7 +43,7 @@ function statusChangeCallback(response) {  // Called with the results from FB.ge
                     "id": response.id,
                     "firstname": response.first_name,
                     "lastname": response.last_name,
-                    "score": 42,
+                    "score": 50,
                     "profilePic": response.picture.data.url,
                 }).then(data => {
                     // JSON data parsed by `data.json()` call
