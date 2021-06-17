@@ -59,7 +59,7 @@ function statusChangeCallback(response) {  // Called with the results from FB.ge
 /**Renders UI based on login-status */
 async function renderUI() {
     console.log(333)
-    await renderLeaderBoard();
+   await populateRankings();
 }
 
 function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
@@ -89,20 +89,41 @@ async function getData(url = '') {
 }
 
 /**An implemenatation function */
-async function renderLeaderBoard() {
+// async function renderLeaderBoard() {
+//     try {
+//         let data = await getData('https://e1qgd37uc2.execute-api.us-east-1.amazonaws.com/getScore');
+//         let arrayOfUsers = data.result.Items;
+//         console.log(arrayOfUsers);
+//         let html = arrayOfUsers.map((object) => {
+//             return `
+//         <div>
+//         <p>${object.id} ${object.firstname} ${object.profilePic} </p>
+//         <p></p>
+//         </div>
+//         `
+//         }).join('');
+//         document.querySelector('#root').insertAdjacentHTML("afterbegin", html);
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+async function populateRankings () {
     try {
-        let data = await getData('https://e1qgd37uc2.execute-api.us-east-1.amazonaws.com/getScore');
-        let arrayOfUsers = data.result.Items;
-        console.log(arrayOfUsers);
-        let html = arrayOfUsers.map((object) => {
-            return `
-        <div>
-        <p>${object.id} ${object.firstname} ${object.profilePic} </p>
-        <p></p>
-        </div>
-        `
-        }).join('');
-        document.querySelector('#root').insertAdjacentHTML("afterbegin", html);
+           // Populate Leaderboard
+    let data = await getData('https://e1qgd37uc2.execute-api.us-east-1.amazonaws.com/getScore');
+    let json = data.result.Items;
+    json.forEach((row) => {
+        const tr = document.createElement("tr");
+
+        row.forEach((cell) => {
+            const td = document.createElement("td");
+            td.textContent = cell;
+            tr.appendChild(td);
+        });
+
+        rankingsBody.appendChild(tr);
+    }); 
     } catch (error) {
         console.log(error)
     }
