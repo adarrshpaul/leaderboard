@@ -108,5 +108,7 @@ async function renderLeaderBoard() {
     }
 }
 
+renderUI();
+
 
 
