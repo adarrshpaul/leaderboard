@@ -122,8 +122,17 @@ async function populateRankings() {
         
         for(prop in row){
             const td = document.createElement("td");
+            if(prop === 'profilePic'){
+            let src = row[prop];
+            let imageElem = document.createElement("img");
+            imageElem.src = src;    
+            tr.appendChild(td);
+            }
+                else {
             td.textContent = row[prop];
             tr.appendChild(td);
+            }
+
         }
 
         rankingsBody.appendChild(tr);
