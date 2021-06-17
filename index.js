@@ -126,7 +126,7 @@ async function populateRankings() {
             let src = row[prop];
             let imageElem = document.createElement("img");
             imageElem.src = src;    
-            tr.appendChild(td);
+            tr.appendChild(imageElem);
             }
                 else {
             td.textContent = row[prop];
