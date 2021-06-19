@@ -116,10 +116,11 @@ async function populateRankings() {
     let data = await getData('https://e1qgd37uc2.execute-api.us-east-1.amazonaws.com/getScore');
     let json = data;
     console.log('JSON :',json)
+    let i = 1;
     json.forEach((row) => {
         const tr = document.createElement("tr");
         console.log('row :',row);
-        let i = 1;
+
         let changedSortObj = {
             'rank': i,
             'profilePic' : row['profilePic'],
